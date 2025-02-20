@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta name="baidu-site-verification" content="codeva-bFAQEhuETb" />
-
     <style media="screen, print">
         @font-face {
             font-family: "Unifont";
@@ -13,188 +11,12 @@
     </style>
     <meta charset="UTF-8">
     <link rel="icon" href="images/favicon.ico">
-    <title>清锦</title>
-    <meta name="description" content="我们是清华附中合肥学校C23级的一个小集体，你好。">
-    <meta name="keywords" content="清锦，清华附中，清华附中合肥学校，清锦班，清锦官网，C2307，清合，清华附中C2307，合肥C2307，清华附中合肥学校C2307，C23">
+    <title>Minecraft_Server_Qingjin</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="Description">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/@waline/client@v3/dist/waline.css"
-    />
-</head>
-
-<body>
-<!-- 定义加载时候的动作 -->
-<div id="app">请稍等…</div>
-<nav>
-
-    <button href="/acc.html" onclick="window.location.href='/acc.html'">Login</button>
-    <canvas id="canvas" style="width:20%;"></canvas>
-    <script>
-        (function(){var t=820;var a=250;var r=7;var n=10;var e=.65;var f;var o=[];const v=["#2eaf88","#00a461","#40d700","#236900","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];var h=[];var u=[[[0,0,1,1,1,0,0],[0,1,1,0,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,0,1,1,0],[0,0,1,1,1,0,0]],[[0,0,0,1,1,0,0],[0,1,1,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[1,1,1,1,1,1,1]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,1,1],[1,1,1,1,1,1,1]],[[1,1,1,1,1,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,0,1,1,1,0],[0,0,1,1,1,1,0],[0,1,1,0,1,1,0],[1,1,0,0,1,1,0],[1,1,1,1,1,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,1,1]],[[1,1,1,1,1,1,1],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,1,1,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[1,1,1,1,1,1,1],[1,1,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,1,1,0,0,0,0]],[[0,0,0,0],[0,0,0,0],[0,1,1,0],[0,1,1,0],[0,0,0,0],[0,0,0,0],[0,1,1,0],[0,1,1,0],[0,0,0,0],[0,0,0,0]]];function l(t){var a=[];f.fillStyle="#005EAC";var r=new Date;var e=70,o=30;var v=r.getHours();var u=Math.floor(v/10);var l=v%10;a.push({num:u});a.push({num:l});a.push({num:10});var c=r.getMinutes();var u=Math.floor(c/10);var l=c%10;a.push({num:u});a.push({num:l});a.push({num:10});var M=r.getSeconds();var u=Math.floor(M/10);var l=M%10;a.push({num:u});a.push({num:l});for(var p=0;p<a.length;p++){a[p].offsetX=e;e=m(e,o,a[p].num,t);if(p<a.length-1){if(a[p].num!=10&&a[p+1].num!=10){e+=n}}}if(h.length==0){h=a}else{for(var C=0;C<h.length;C++){if(h[C].num!=a[C].num){s(a[C]);h[C].num=a[C].num}}}i(t);g();return r}function s(t){var a=t.num;var n=u[a];for(var e=0;e<n.length;e++){for(var f=0;f<n[e].length;f++){if(n[e][f]==1){var h={offsetX:t.offsetX+r+r*2*f,offsetY:30+r+r*2*e,color:v[Math.floor(Math.random()*v.length)],g:1.5+Math.random(),vx:Math.pow(-1,Math.ceil(Math.random()*10))*4+Math.random(),vy:-5};o.push(h)}}}}function i(t){for(var a=0;a<o.length;a++){t.beginPath();t.fillStyle=o[a].color;t.arc(o[a].offsetX,o[a].offsetY,r,0,2*Math.PI);t.fill()}}function g(){var n=0;for(var f=0;f<o.length;f++){var v=o[f];v.offsetX+=v.vx;v.offsetY+=v.vy;v.vy+=v.g;if(v.offsetY>a-r){v.offsetY=a-r;v.vy=-v.vy*e}if(v.offsetX>r&&v.offsetX<t-r){o[n]=o[f];n++}}for(;n<o.length;n++){o.pop()}}function m(t,a,n,e){var f=u[n];for(var o=0;o<f.length;o++){for(var v=0;v<f[o].length;v++){if(f[o][v]==1){e.beginPath();e.arc(t+r+r*2*v,a+r+r*2*o,r,0,2*Math.PI);e.fill()}}}e.beginPath();t+=f[0].length*r*2;return t}var c=document.getElementById("canvas");c.width=t;c.height=a;f=c.getContext("2d");var M=new Date;setInterval(function(){f.clearRect(0,0,f.canvas.width,f.canvas.height);l(f)},50)})();
-    </script>
-</nav>
-<div id="waline" style="width: 80%; margin: 0 auto;"></div>
-<script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-    init({
-        el: '#waline',
-        serverURL: 'https://www.hfc2307.asia',
-    });
-</script>
-<style type="text/css">
-    #div1 {
-        width: 100px;
-        height: 100px;
-        padding: 0;
-        margin: 0;
-        position: fixed;
-        left: 0;
-        top: 0;
-    }
-    #div1 img {
-        width: 100px;
-        height: 100px;
-    }
-</style>
-<script>
-    window.onload = function () {
-        //获取元素
-        var div1 = document.getElementById('div1');
-        var w = document.documentElement.clientWidth;
-        var h = document.documentElement.clientHeight;
-        var gox = 1;
-        var goy = 1;
-        var a=0;
-        //广告漂浮
-        function move() {
-            var x = div1.offsetLeft;
-            var y = div1.offsetTop;
-            if (x > w - 100 || x < 0) gox = -gox;
-            div1.style.left = x + (5 * gox) + 'px';
-            if (y > h - 100 || y < 0) goy = -goy;
-            div1.style.top = y + (5 * goy) + 'px';
-        }
-        //漂浮定时器
-        var timer = setInterval(move, 50);
-        //移入移出时广告的浮动
-        div1.onmouseover = function () {
-            clearInterval(timer);
-        }
-        div1.onmouseout = function () {
-            timer = setInterval(move, 50);
-        }
-        //点击一次跳转到另一个页面，点击两次广告消失
-        div1.onclick = function() {
-            if (a === 0) {
-                var neww = window.open('_blank');
-                neww.location = "http://www.baidu.com";
-                a++;
-            } else {
-                this.style.display = "none";
-            }
-        }
-    }
-</script>
 </head>
 <body>
-<div id="div1">
-    <img src="images/notitle (1).png"></img>
-</div>
-</body>
-
-<script>
-
-    window.$docsify = {
-        // 项目名称
-        //name: '学习',
-        // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
-        //repo: ,
-        // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
-        loadSidebar: true,
-        onlyCover: true,
-        sidebarDisplayLevel: 1,
-        alias: {
-            '/.*/_sidebar.md': '/_sidebar.md'
-        },
-        // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
-        loadNavbar: true,
-        // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
-        coverpage: true,
-        // 最大支持渲染的标题层级
-        maxLevel: 5,
-        // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
-        subMaxLevel: 3,
-        // 小屏设备下合并导航栏到侧边栏
-        mergeNavbar: false,
-        auto2top: false,
-        //Latex设置
-        latex: {
-            inlineMath   : [['$', '$'], ['\\(', '\\)']],
-            displayMath  : [['$$', '$$']],
-            customOptions: {}
-        },
-        pagination: {
-            previousText: '上一章节',
-            nextText: '下一章节',
-        },
-        /*搜索相关设置*/
-        /*search: {
-            paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
-            // 支持本地化
-            placeholder: {
-                '': '搜索...'
-            },
-            noData: '找不到结果',
-            depth: 4,
-            hideOtherSidebarContent: false,
-            namespace: 'Docsify-Guide',
-        },*/
-/*
-        count:{
-            countable: true,
-            position: 'top',
-            margin: '10px',
-            float: 'right',
-            fontsize:'0.9em',
-            color:'rgb(119,136,153)',
-            language:'chinese',
-            isExpected: true
-        }*/
-    }
-</script>
-<!-- MathJax -->
-<script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
-<!-- docsify的js依赖 -->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-<!-- emoji表情支持 -->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-<!-- 图片放大缩小支持 -->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-<!-- 搜索功能支持 -->
-
-<!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> -->
-
-
-<!-- code render-->
-<script src="//cdn.jsdelivr.net/npm/prismjs@latest/components/prism-bash.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@latest/components/prism-python.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-pagination@latest/dist/docsify-pagination.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-<!-- gitalk支持-->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-<!--字数统计-->
-<!--<script src="//unpkg.com/docsify-count/dist/countable.js"></script>-->
-
-
+    <a>你好，这是由清华附中合肥学校C2307班的一位同学搭建的MC服务器。</a>
 </body>
 </html>
