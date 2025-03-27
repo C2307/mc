@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="favicon.ico">
-    <title>Minecraft_Server_Qingjin</title>
-</head>
-<body>
-    <p>你好。</p>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+      {
+    "imports": {
+      "@material/web/": "https://esm.run/@material/web/"
+    }
+  }
+</script>
+  <script type="module">
+      import '@material/web/all.js';
+      import {
+          styles as typescaleStyles
+      } from '@material/web/typography/md-typescale-styles.js';
 
-    <p>服务器状态：</p><a href="https://simpfun.cn/console/ins/339460/"><button>跳转到控制台</button></a>
-</body>
-</html>
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <style>
+p.margin
+{
+	margin-top:50px;
+}
+body {
+  font-family: PingFang SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif !important;
+    color: #000000;
+    margin: 0 auto !important;
+}
+
+table{
+
+  margin: 0 auto;
+	width: 80%;
+  text-align: center;
+    background-color: #9576eb;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+#myForm, input, button, img, th{
+	padding: 6px;	
+  border-radius: 10px;
+}
+th{
+    background-color: #9576eb;
+}
+tr{
+	background-color: #fff;
+    border-bottom-style: dotted;
+    border-bottom-color: #9576eb;	
+}
+tr:nth-of-type(odd) {
+    background: rgb(255 255 255 / 74%);
+}
+tr:hover {
+    background-color: #6750A4;
+}
+</style>
+</head>
+<div style="text-align: center;">
+  <form id="myForm">
+    <md-filled-text-field name="ip" label="IP" maxlength="50" value="07s.top">
+    </md-filled-text-field>
+    <md-filled-button type="submit">查询</md-filled-button>
+    <md-outlined-button type="reset" onclick="location.reload()">复位</md-outlined-button>
+  </form>
+</div>
+<div id="data" style="text-align: center;">请稍后…</div>
+<script>
+  const a = document.getElementById('data');
+  async function fetchData() {
+      try {
+          const response = await fetch('https://list.mczfw.cn/api');
+          const data = await response.json();
+          displayData(data)
+      } catch (error) {
+          console.error('Fail：', error)
+      }
+  }
+
+  function displayData(data) {
+      let html = '<table><thead><tr><th>Logo</th><th>IP</th><th>MOTD</th></tr></thead>';
+      for (let item of data) {
+          html += `<tr><td><img src="${item.logo}"></td><td>${item.ip}</td><td>${item.motd}</td></li></tr>`
+      }
+      html += '</table>';
+      a.innerHTML = html
+  }
+  fetchData();
+  document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('myForm');
+      form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const ipInput = document.querySelector('md-filled-text-field[name="ip"]');
+          const ip = ipInput.value;
+          const url = 'https://list.mczfw.cn/api/' + encodeURIComponent(ip);
+          fetch(url).then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok.');
+              }
+              return response.json()
+          }).then(data => {
+              a.innerHTML = `<table><thead><tr><th>Logo</th><th>Online</th><th>Mods</th><th>MOTD</th></tr></thead><tr><td><img src="${data.logo}"></td><td>${data.p}/${data.mp}</td><td>${data.mod}</td><td>${data.motd}</td></li></tr></table>`
+          })
+      })
+  });
+</script>
